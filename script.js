@@ -57,7 +57,7 @@ function mostrarItinerario(index, elemento) {
   const t = transportadores[index];
   detalheArea.innerHTML = `
         <div style="animation: fadeIn 0.4s ease forwards;">
-            <h2 style="color: var(--primary-blue);"><i class="fas fa-route"></i> Itinerário: ${t.nome}</h2>
+            <h2 style="color: var(--primary-blue);"><i class="fas fa-route"></i> Itinerário de ${t.nome}</h2>
             <div class="itinerario-card">
                 <p style="font-size: 1.15rem; line-height: 1.7;">${t.itinerario}</p>
             </div>
