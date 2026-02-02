@@ -1,137 +1,116 @@
 :root {
-  --primary-blue: #003366;
-  --bg-gray: #f4f7f9;
-  --white: #ffffff;
-  --alert-red: #d32f2f;
-  --whatsapp-green: #25d366;
+    --primary-blue: #003366;
+    --bg-gray: #f4f7f9;
+    --white: #ffffff;
+    --alert-red: #d32f2f;
+    --whatsapp-green: #25D366;
 }
 
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: var(--bg-gray);
-  margin: 0;
-}
+/* Reset Geral */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Cabeçalho e Faixa Azul */
-header {
-  background: var(--white);
-  text-align: center;
-}
-.logo-container {
-  padding: 20px;
-}
-.logo {
-  max-width: 300px;
-  width: 100%;
-}
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-gray); }
+
+/* Cabeçalho */
+header { background: var(--white); text-align: center; width: 100%; }
+.logo-container { padding: 20px; }
+.logo { max-width: 280px; width: 100%; height: auto; }
 
 .faixa-titulo {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
 }
 
-/* Layout */
+/* Layout Responsivo */
 .container {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 30px;
-  max-width: 1300px;
-  margin: 40px auto;
-  padding: 0 20px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 /* GIF sem fundo */
 .bus-gif {
-  width: 100%;
-  max-width: 280px;
-  mix-blend-mode: multiply; /* Remove o fundo branco */
-  display: block;
-  margin: 0 auto 20px;
+    width: 100%;
+    max-width: 250px;
+    mix-blend-mode: multiply;
+    display: block;
+    margin-bottom: 20px;
 }
 
-/* Cards de Nomes */
-#lista-transportadores {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
+/* Cards Laterais */
 .card-transportador {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+    font-weight: bold;
 }
 
-.card-transportador:hover,
-.card-transportador.selecionado {
-  background-color: var(--primary-blue);
-  color: var(--white);
+.card-transportador:hover, .card-transportador.selecionado {
+    background-color: var(--primary-blue);
+    color: var(--white);
 }
 
-.card-transportador:hover i,
-.card-transportador.selecionado i {
-  color: var(--white) !important;
+.card-transportador:hover i, .card-transportador.selecionado i {
+    color: white !important;
 }
 
-/* Área de Itinerário */
+/* Área Central */
 .display-area {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  min-height: 500px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    min-height: 400px;
 }
 
 .itinerario-card {
-  background: #f9f9f9;
-  border-left: 8px solid var(--primary-blue);
-  padding: 30px;
-  border-radius: 12px;
-  margin: 25px 0;
+    background: #f9f9f9;
+    border-left: 8px solid var(--primary-blue);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
-/* Botão WhatsApp */
 .btn-whatsapp-large {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background-color: var(--whatsapp-green) !important;
-  color: white !important;
-  text-decoration: none !important;
-  padding: 18px 35px;
-  border-radius: 50px;
-  font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--whatsapp-green) !important;
+    color: white !important;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-weight: bold;
 }
 
-/* Nota de Rodapé Centralizada e Vermelha */
+/* Nota de Rodapé */
 .nota-destacada {
-  background: var(--white);
-  color: var(--alert-red);
-  border: 2px solid var(--alert-red);
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 850px;
-  margin: 50px auto;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+    color: var(--alert-red);
+    border: 2px solid var(--alert-red);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 850px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
+@media (max-width: 850px) { .container { grid-template-columns: 1fr; } }

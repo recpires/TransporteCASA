@@ -45,33 +45,27 @@ const transportadores = [
 
 transportadores.sort((a, b) => a.nome.localeCompare(b.nome));
 
-const listaContainer = document.getElementById("lista-transportadores");
-const detalheArea = document.getElementById("detalhes");
+const container = document.getElementById("lista-transportadores");
+const detalhe = document.getElementById("detalhes");
 
-function mostrarItinerario(index, elemento) {
+function mostrar(index, el) {
   document
     .querySelectorAll(".card-transportador")
     .forEach((c) => c.classList.remove("selecionado"));
-  elemento.classList.add("selecionado");
-
+  el.classList.add("selecionado");
   const t = transportadores[index];
-  detalheArea.innerHTML = `
+  detalhe.innerHTML = `
         <div style="animation: fadeIn 0.4s ease forwards;">
-            <h2 style="color: var(--primary-blue);"><i class="fas fa-route"></i> Itinerário de ${t.nome}</h2>
-            <div class="itinerario-card">
-                <p style="font-size: 1.15rem; line-height: 1.7;">${t.itinerario}</p>
-            </div>
-            <a href="https://wa.me/${t.tel}" target="_blank" class="btn-whatsapp-large">
-                <i class="fab fa-whatsapp"></i> Iniciar Conversa no WhatsApp
-            </a>
-        </div>
-    `;
+            <h2 style="color: var(--primary-blue);"><i class="fas fa-route"></i> Itinerário: ${t.nome}</h2>
+            <div class="itinerario-card"><p>${t.itinerario}</p></div>
+            <a href="https://wa.me/${t.tel}" target="_blank" class="btn-whatsapp-large"><i class="fab fa-whatsapp"></i> Iniciar Conversa</a>
+        </div>`;
 }
 
-transportadores.forEach((t, index) => {
-  const div = document.createElement("div");
-  div.className = "card-transportador";
-  div.innerHTML = `<span>${t.nome}</span> <i class="fab fa-whatsapp" style="color:#25d366"></i>`;
-  div.onclick = () => mostrarItinerario(index, div);
-  listaContainer.appendChild(div);
+transportadores.forEach((t, i) => {
+  const d = document.createElement("div");
+  d.className = "card-transportador";
+  d.innerHTML = `<span>${t.nome}</span> <i class="fab fa-whatsapp" style="color:#25d366"></i>`;
+  d.onclick = () => mostrar(i, d);
+  container.appendChild(d);
 });
