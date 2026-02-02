@@ -49,7 +49,6 @@ const listaContainer = document.getElementById("lista-transportadores");
 const detalheArea = document.getElementById("detalhes");
 
 function mostrarItinerario(index, elemento) {
-  // Remove seleção de todos e aplica no clicado
   document
     .querySelectorAll(".card-transportador")
     .forEach((c) => c.classList.remove("selecionado"));
