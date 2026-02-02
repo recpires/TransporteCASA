@@ -1,0 +1,132 @@
+:root {
+  --primary-blue: #003366;
+  --bg-gray: #f4f7f9; /* Fundo da página */
+  --whatsapp-green: #25d366;
+  --white: #ffffff;
+  --alert-red: #d32f2f;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-gray);
+  margin: 0;
+}
+
+/* Cabeçalho e Faixa Azul */
+header {
+  background: var(--white);
+  text-align: center;
+}
+.logo-container {
+  padding: 15px;
+}
+.logo {
+  max-width: 240px;
+}
+.faixa-titulo {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Layout Principal */
+.container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 25px;
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Sidebar e GIF */
+.bus-gif {
+  width: 220px;
+  mix-blend-mode: multiply;
+  filter: contrast(105%);
+}
+#lista-transportadores {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Cards com Efeito Azul (Hover e Seleção) */
+.card-transportador {
+  background: var(--white);
+  padding: 18px 25px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.card-transportador:hover,
+.card-transportador.selecionado {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.card-transportador:hover i,
+.card-transportador.selecionado i {
+  color: var(--white) !important;
+}
+
+/* Área de Itinerário */
+.display-area {
+  background: var(--white);
+  padding: 50px;
+  border-radius: 20px;
+  min-height: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.itinerario-card {
+  background: #f9f9f9;
+  border-left: 8px solid var(--primary-blue);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+}
+
+.btn-whatsapp-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--whatsapp-green) !important;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+/* NOTA COM FUNDO DIFERENTE DO BACKGROUND */
+.nota-destacada {
+  background: var(--white); /* Fundo branco para destacar do fundo cinza */
+  color: var(--alert-red);
+  border: 2px solid var(--alert-red);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 850px;
+  margin: 50px auto;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+}
+
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
